@@ -29,6 +29,7 @@ def balances(transactions: Iterable[Transaction]) -> dict[str, Decimal]:
     totals = totals_by(transactions, key=lambda t: t.account)
     return dict(sorted(totals.items()))
 
+
 def spending_by_category(transactions: Iterable[Transaction]) -> dict[str, Decimal]:
     """The spending of each category, as positive amounts, largest first."""
     spending = [t for t in transactions if is_spending(t)]
